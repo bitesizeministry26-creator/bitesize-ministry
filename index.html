@@ -1,1 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Bite Size Ministry | Escarpment Road NTCOG</title>
+
+    <meta name="description" content="Bite Size Ministry — Christ in Bite-Sized Pieces. Every Child Known. Every Child Loved. Every Child Growing in Christ.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #172554;
+            --blue: #2563eb;
+            --yellow: #facc15;
+            --gold: #f59e0b;
+            --cream: #fffdf5;
+            --white: #ffffff;
+            --text: #1e293b;
+            --soft-blue: #eff6ff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-button {
+            background: var(--navy);
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 6%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(250,204,21,.35), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(37,99,235,.18), transparent 25%),
+                linear-gradient(135deg, #fffdf5, #eff6ff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            line-height: .95;
+            color: var(--navy);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 15px;
+            color: var(--blue);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .about-card {
+            background: var(--soft-blue);
+            padding: 35px;
+            border-radius: 25px;
+        }
+
+        .about-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        /* VALUES */
+
+        .values {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(15,23,42,.08);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            color: var(--navy);
+        }
+
+        /* CHILDREN */
+
+        .children {
+            background: #f8fafc;
+        }
+
+        .children-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .child-card {
+            padding: 35px;
+            border-radius: 25px;
+            background: white;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .child-card h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        /* HIGHLIGHTS */
+
+        .highlight-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-card {
+            min-height: 220px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: white;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.4rem;
+        }
+
+        /* VOLUNTEER */
+
+        .volunteer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+
+        .volunteer h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .volunteer p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #dbeafe;
+        }
+
+        .volunteer .button {
+            background: var(--yellow);
+            color: var(--navy);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 45px 6%;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+        }
+
+        .footer-line {
+            margin-top: 25px;
+            font-size: .85rem;
+            color: #94a3b8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .values,
+            .children-grid,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .volunteer h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">
+            💛 Bite <span>Size</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#volunteer" class="nav-button">Volunteer</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                Children's Ministry • Escarpment Road NTCOG
+            </div>
+
+            <h1>
+                BITE <span>SIZE</span>
+            </h1>
+
+            <h2>
+                Christ in Bite-Sized Pieces.
+            </h2>
+
+            <p>
+                Helping children know Christ, discover who God created them to be,
+                develop their gifts, and grow into lifelong disciples.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="button primary">
+                    Discover Bite Size
+                </a>
+
+                <a href="#volunteer" class="button secondary">
+                    Serve With Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <h2>Welcome to Bite Size 💛</h2>
+
+            <p>
+                Every child deserves a place where they are known, loved,
+                encouraged and given the opportunity to grow in Christ.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>🌱 Our Vision</h3>
+
+                <p>
+                    To develop children ages 3–12 into lifelong disciples
+                    of Jesus Christ.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>✨ Our Philosophy</h3>
+
+                <p>
+                    We present Christ in meaningful, age-appropriate and
+                    memorable ways that children can understand, apply and
+                    carry with them beyond Children's Church.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOTTO -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>What We Believe</h2>
+
+            <p>
+                Our ministry is built around three simple commitments.
+            </p>
+
+        </div>
+
+        <div class="values">
+
+            <div class="value-card">
+                <div class="value-icon">👀</div>
+                <h3>Every Child Known</h3>
+                <p>
+                    We intentionally know the children we serve.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">💛</div>
+                <h3>Every Child Loved</h3>
+                <p>
+                    Every child should experience the love of Christ.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Every Child Growing</h3>
+                <p>
+                    We help children grow in faith, character and purpose.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHILDREN -->
+
+    <section class="children" id="children">
+
+        <div class="section-title">
+
+            <h2>Our Children</h2>
+
+            <p>
+                Different ages. Different stages. One purpose — growing in Christ.
+            </p>
+
+        </div>
+
+        <div class="children-grid">
+
+            <div class="child-card">
+
+                <h3>🌟 Samuel Generation</h3>
+
+                <p><strong>Ages 3–5</strong></p>
+
+                <p>
+                    Building a foundation of faith through Bible stories,
+                    worship, play, creativity and simple biblical truths.
+                </p>
+
+            </div>
+
+            <div class="child-card">
+
+                <h3>🌈 Growing Disciples</h3>
+
+                <p><strong>Children's Groups</strong></p>
+
+                <p>
+                    Interactive experiences designed to help children
+                    understand God's Word and apply it to everyday life.
+                </p>
+
+            </div>
+
+            <div class="child-card">
+
+                <h3>👑 Future Leaders</h3>
+
+                <p><strong>Ages 9–12</strong></p>
+
+                <p>
+                    Helping children discover their identity, gifts,
+                    leadership potential and purpose in Christ.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section id="highlights">
+
+        <div class="section-title">
+
+            <h2>Bite Size Highlights 📸</h2>
+
+            <p>
+                A glimpse into what God is doing through our children and workers.
+            </p>
+
+        </div>
+
+        <div class="highlight-grid">
+
+            <div class="highlight-card">
+                <h3>🎉 Children's Church</h3>
+                <p>Learning, worshipping and growing together.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h3>👑 Vacation Bible School</h3>
+                <p>Faith, fun, friendship and unforgettable moments.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h3>🏆 Bible & Sports Challenges</h3>
+                <p>Building teamwork, character and biblical knowledge.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+
+    <section id="events" class="children">
+
+        <div class="section-title">
+
+            <h2>What's Happening?</h2>
+
+            <p>
+                Check back here for upcoming Bite Size Ministry activities,
+                events and special experiences.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>📅 Upcoming Events</h3>
+
+                <p>
+                    Event information will be posted here as the ministry calendar
+                    is updated.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>📢 Stay Connected</h3>
+
+                <p>
+                    Follow the ministry's official communication channels
+                    for announcements and updates.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLUNTEER -->
+
+    <section class="volunteer" id="volunteer">
+
+        <h2>You Have a Place Here.</h2>
+
+        <p>
+            Whether you teach, create, organize, pray, welcome, play,
+            design or work behind the scenes — your gift can help shape
+            the next generation.
+        </p>
+
+        <!-- WE WILL ADD YOUR GOOGLE FORM LINK HERE -->
+
+        <a href="#" class="button">
+            🙋🏽‍♀️ Join the Bite Size Team
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>💛 Bite Size Ministry</h3>
+
+        <p>
+            Christ in Bite-Sized Pieces.
+        </p>
+
+        <p>
+            Escarpment Road New Testament Church of God • Jamaica
+        </p>
+
+        <div class="footer-line">
+            Every Child Known. Every Child Loved. Every Child Growing in Christ.
+        </div>
+
+    </footer>
+
+</body>
+</html>
